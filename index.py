@@ -9,9 +9,8 @@ from pywebio.session import *
 def get_fun_fact(_):
 # clears screen of previous fact
     clear()
-
-put_html("<p align=""left""> <h2><img src="smile.jpg" alt="Place holder" width = "7%" > Fun Fact Generator </h2></p>") 
-                
+# 
+    put_html("<p><h2></h2></p>")
 # fetches fun facts 
 url = "https://uselessfacts.jsph.pl/random.json?language=en" 
 # Uses GET request
@@ -25,10 +24,10 @@ style(put_text(useless_fact), 'color: blue; font-size: 30px')
 put_buttons([dict(label='Click me', value='outline-success',  
               color='outline-success')], onclick=get_fun_fact)
 # Driver function
-if _name_ == '_main_':
+if __name__ == '__main__':
 # adds logo and header
- put_html(" <p align=""left""><h2><img src="smile.jpg" alt ="Place Holder" width="7%" > Fun Fact Generator</h2></p>")  
+#  put_html(" <p align=""left""><h2><img src="smile.jpg"  width="7%" > Fun Fact Generator</h2></p>")  
 # holds fact and adds button
-put_buttons( [dict(label='Click me', value='outline-success',  
+    put_buttons( [dict(label='Click me', value='outline-success',  
               color='outline-success')], onclick=get_fun_fact)
 hold()
